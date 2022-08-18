@@ -1,12 +1,21 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
 
-*, *::after, *::before{
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 18px;
+    height: 100vh;
 }
 
 /* ## Colors
@@ -23,7 +32,7 @@ html{
 - Cream: hsl(27, 66%, 92%)
 - Very pale orange: hsl(33, 100%, 98%) */
 
-:root{
+:root {
     --color-soft-red: hsl(10, 79%, 65%);
     --color-cyan: hsl(186, 34%, 60%);
     --color-dark-brown: hsl(25, 47%, 15%);
@@ -32,55 +41,62 @@ html{
     --color-very-pale-orange: hsl(33, 100%, 98%);
 }
 
-body{
+body {
     background-color: var(--color-cream);
     font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
-p,h1,h2,h3,h4,h5,h6{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-.chart-component{
-    margin: 5rem auto;
+.chart-component {
+    margin: 1.5rem auto;
     width: 92%;
-    max-width: 450px;
+    max-width: 500px;
 }
 
-.my-balance-logo{
+.my-balance-logo {
     height: 35px;
     padding: 0 0.25rem;
 }
 
-.label-text{
+.label-text {
     font-weight: 400;
-    font-size: 0.775rem;
+    font-size: 0.85rem;
 }
 
-.big-bold-text{
+.big-bold-text {
     font-weight: 700;
     font-size: 1.35rem;
 }
 
 
-.card{
+.card {
     background-color: white;
     padding: 1.25rem 6%;
     border-radius: 0.6rem;
     max-width: 600px;
 }
 
-.card + .card{
+.card+.card {
     margin-top: 1rem;
 }
 
-.my-balance-card{
+.my-balance-card {
     background-color: var(--color-soft-red);
     color: white;
     display: flex;
@@ -88,85 +104,89 @@ img{
     align-items: center;
 }
 
-.my-balance-display .label-text{
-    margin-bottom: 0.25rem;
+.my-balance-display .label-text {
+    margin-bottom: 0.4rem;
 }
 
-.spending-chart-card{
+.spending-chart-card {
     background-color: var(--color-very-pale-orange);
-    color: var(--color-medium-brown)
+    color: var(--color-medium-brown);
+    padding-top: 1.75rem;
+    padding-bottom: 2rem;
 }
 
-.spending-chart-card h1, 
+.spending-chart-card h1,
 .spending-chart-card h2,
-.spending-chart-card h4 {
+.spending-chart-card h5 {
     color: var(--color-dark-brown);
 }
 
-.spending-chart-card hr{
+.spending-chart-card hr {
     border-color: var(--color-cream);
     border-style: solid;
-   
+
 }
 
-.chart-summary{
+.chart-summary {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-top: 0.75rem;
+    padding-top: 1rem;
 }
 
-.chart-summary> .stat{
+.chart-summary>.stat {
     text-align: right;
 }
 
-.total #spending-total{
-    margin-top: 0.25rem;
+#spending-total {
+    margin-top: 0.15rem;
+    font-size: 1.675rem;
 }
 
-#bar-chart-container{
+#bar-chart-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 3rem;
+    padding-bottom: 1rem;
 }
 
-.bar-chart-bar{
+.bar-chart-bar {
     width: 100%;
     text-align: center;
     position: relative;
 }
 
-.bar-chart-bar + .bar-chart-bar{
-    margin-left: 4%;
+.bar-chart-bar+.bar-chart-bar {
+    margin-left: min(4%, 1rem);
 }
 
-.bar-chart-bar > .bar{
+.bar-chart-bar>.bar {
     height: 5rem;
     background-color: var(--color-soft-red);
     border-radius: 0.25rem;
-    
+
 }
 
-.bar-chart-bar .bar--max{
+.bar-chart-bar .bar--max {
     background-color: var(--color-cyan);
 }
 
 .bar:hover,
 .bar:focus,
-.bar:active{
+.bar:active {
     opacity: 70%;
     cursor: pointer;
 }
 
-.bar-chart-bar > .label{
+.bar-chart-bar>.label {
     font-weight: 400;
     font-size: 0.65rem;
     letter-spacing: .025ch;
     margin-top: 0.5rem;
 }
 
-.bar__flag{
+.bar__flag {
     background-color: var(--color-dark-brown);
     color: white;
     padding: 0.35rem;
@@ -179,6 +199,42 @@ img{
     display: none;
 }
 
-.bar-chart-bar.show-flag > .bar__flag{
+.bar-chart-bar.show-flag>.bar__flag {
     display: block;
+}
+
+
+@media (min-width: 550px) {
+    .big-bold-text {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding-left: 7.25%;
+        padding-right: 7.25%;
+    }
+
+    .card+.card {
+        margin-top: 1.25rem;
+    }
+
+    .spending-chart-card>.big-bold-text {
+        font-size: 1.75rem;
+    }
+
+    #bar-chart-container {
+        margin-top: 4rem;
+    }
+
+    #spending-total {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-height: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
