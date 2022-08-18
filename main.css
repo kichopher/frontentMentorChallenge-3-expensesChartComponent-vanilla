@@ -117,7 +117,7 @@ img {
 
 .spending-chart-card h1,
 .spending-chart-card h2,
-.spending-chart-card h5 {
+.spending-chart-card h3 {
     color: var(--color-dark-brown);
 }
 
@@ -203,6 +203,9 @@ img {
     display: block;
 }
 
+.stat-text{
+    font-size: 0.9rem;
+}
 
 @media (min-width: 550px) {
     .big-bold-text {
